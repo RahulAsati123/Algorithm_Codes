@@ -3,7 +3,7 @@
 using namespace std;
 
 int f(int i , int j , vector<int> arr , vector<vector<int> > &dp){
-    if(i == j){
+    if(i == j){                         // -----------> base condition
         return 0;
     }
 
@@ -12,7 +12,7 @@ int f(int i , int j , vector<int> arr , vector<vector<int> > &dp){
     }
     int mini = 1e9;
     for(int k = i ; k<j ; k++){
-        int steps = f(i,k,arr,dp) + f(k+1,j,arr,dp) + arr[i-1]*arr[k]*arr[j];
+        int steps = f(i,k,arr,dp) + f(k+1,j,arr,dp) + arr[i-1]*arr[k]*arr[j];        // ---------> result given by kth partition
         if(steps < mini){
             mini= steps;
         }
