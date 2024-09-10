@@ -4,7 +4,7 @@ using namespace std;
 
 int knapsack(int index , int w , vector<int> &values , vector<int> &weights , vector<vector<int> >&dp){
 
-    if(index == 0){
+    if(index == 0){                              // ----------> base condition
         if(weights[index] <= w){
             return values[index];
         }
@@ -16,10 +16,10 @@ int knapsack(int index , int w , vector<int> &values , vector<int> &weights , ve
         return dp[index][w];
     }
 
-    int not_take = knapsack(index-1 , w , values , weights,dp);
+    int not_take = knapsack(index-1 , w , values , weights,dp);         // -----------> condition for not taking the item
     int take = -999999;
     if(weights[index]<=w){
-        take = values[index]+knapsack(index-1 , w-weights[index] , values , weights,dp);
+        take = values[index]+knapsack(index-1 , w-weights[index] , values , weights,dp);        //------> condition for taking the item
     }
     return dp[index][w] = max(take , not_take);
 
