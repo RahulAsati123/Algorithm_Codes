@@ -48,3 +48,14 @@ int main(){
     }
 
 }
+
+
+// Time Complexity: O(n*target)
+// Space Complexity: O(n*target)
+
+// * Define base case that is when target == 0 return true because it means the subset is found.
+// if we reach index  == 0 and  arr[index] == target then return true.
+// * take two cases one is when we take the element and other is when we don't take the element.
+// * if the element is less than target then only we can take the element.
+// * return the result of taking the element or not taking the element.
+// * Use memoization to store the result of subproblems to avoid recomputation of same subproblems.
